@@ -1,6 +1,7 @@
 // webpack.config.prod.js
 // Watches + deploys files minified + cachebusted
 
+const dotenv = require('dotenv').config({ debug: true });
 const url = require('url');
 const path = require('path');
 const webpack = require('webpack');
@@ -11,6 +12,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const moment = require('moment');
 
 const Project = require('../common/project');
+console.log('Project assetUrl: ', Project.assetUrl);
 
 module.exports = {
     devtool: 'source-map',

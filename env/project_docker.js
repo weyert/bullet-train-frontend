@@ -18,5 +18,5 @@ module.exports = global.Project = {
     },
     mixpanel: process.env.MIXPANEL_API_TOKEN || '9448f5be8a5555c380e5dd4b7ac2c345',
     youtubeApi: process.env.YOUTUBE_API_TOKEN || 'AIzaSyCAjMzgz8vbxqReBxkQGcwsda6zAO0L2JE',
-    assetUrl: process.env.BULLETTRAIN_ASSET_URL || 'https://cdn.bullet-train.io', // Location of the static files from build/, should contain a directory called static/
+    assetUrl: process.env.BULLET_TRAIN_ASSET_URL || 'https://cdn.bullet-train.io', // Location of the static files from build/, should contain a directory called static/
 };
