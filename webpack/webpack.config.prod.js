@@ -13,6 +13,9 @@ const moment = require('moment');
 
 const Project = require('../common/project');
 console.log('Project assetUrl: ', Project.assetUrl);
+console.log('Project bulletTrain: ', Project.bulletTrain);
+console.log('Project bulletApi: ', Project.api);
+console.log('Project bulletApi: ', Project.api);
 
 module.exports = {
     devtool: 'source-map',
@@ -56,6 +59,18 @@ module.exports = {
                 __DEV__: false,
                 SENTRY_RELEASE_VERSION: moment().valueOf().toString(),
             }),
+
+            new webpack.EnvironmentPlugin([
+                'BULLET_TRAIN_API_KEY',
+                'BULLET_TRAIN_API_URL',
+                'BULLET_TRAIN_ASSET_URL',
+                'MIXPANEL_API_TOKEN',
+                'GOOGLE_ANALYTICS_KEY',
+                'SENTRY_API_URL',
+                'YOUTUBE_API_TOKEN',
+                'FRESHCAT_TOKEN',
+                'FRESHCAT_HOST_URL'
+            ]),
 
             // reduce filesize
             new webpack.optimize.OccurrenceOrderPlugin(),
