@@ -1,5 +1,10 @@
 FROM node:10-alpine
 
+# Prepare build
+ARG BULLET_TRAIN_API_KEY=4vfqhypYjcPoGGu8ByrBaj
+ARG BULLET_TRAIN_API_URL=https://api.bullet-train.restauranto.it/api/v1/
+ARG BULLET_TRAIN_ASSET_URL=https://bullet-train.restauranto.it
+
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -12,7 +17,10 @@ COPY . .
 COPY package*.json ./
 
 # Build the node application in prod mode
-ENV ENV docker
+ENV ENV dockerENV BULLET_TRAIN_API_KEY ${BULLET_TRAIN_API_KEY}
+ENV BULLET_TRAIN_API_URL ${BULLET_TRAIN_API_URL}
+ENV BULLET_TRAIN_ASSET_URL ${BULLET_TRAIN_ASSET_URL}
+
 RUN npm i
 RUN npm run env
 RUN npm run bundle
