@@ -69,7 +69,7 @@ module.exports = {
                 'SENTRY_API_URL',
                 'YOUTUBE_API_TOKEN',
                 'FRESHCAT_TOKEN',
-                'FRESHCAT_HOST_URL'
+                'FRESHCAT_HOST_URL',
             ]),
 
             // reduce filesize
